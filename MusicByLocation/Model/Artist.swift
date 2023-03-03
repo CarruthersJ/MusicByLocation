@@ -8,5 +8,9 @@
 import Foundation
 
 struct Artist: Codable {
-    var artistName : String
+    var name : String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "artistName"
+    }
 }

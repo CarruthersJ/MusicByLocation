@@ -9,18 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var state = StateController()
+    
     var body: some View {
         VStack(alignment: .center) {
-            Form {
-                Text(state.lastKnownLocation)
-            }
-            
+            Text(state.artistNames)
+            Text(state.lastKnownLocation)
+                .padding()
             Spacer()
             Button("Find Music", action: {
                 state.findMusic()
             })
-        }
-        .onAppear() {
+        }.onAppear() {
             state.requestAccessToLocationData()
             state.getArtists()
         }
