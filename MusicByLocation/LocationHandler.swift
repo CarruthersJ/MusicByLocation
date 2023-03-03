@@ -11,10 +11,7 @@ import CoreLocation
 class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
     let manager = CLLocationManager()
     let geocoder = CLGeocoder()
-    @Published var city: String = ""
-    @Published var country: String = ""
-    @Published var latitudeCoordinates: String = ""
-    @Published var longtitudeCoordinates : String = ""
+    @Published var lastKnownLocation: String = ""
      
     override init() {
         super.init()
@@ -33,14 +30,10 @@ class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
         if let firstLocation = locations.first {
             geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error ) in
                 if error != nil {
-                    self.city = "Could not perform look up of location from coordinate information"
+                    self.lastKnownLocation = "Could not perform look up of location from coordinate information"
                 } else  {
                     if let firstPlacemark = placemarks?[0] {
-                        self.city = firstPlacemark.locality ?? "Couldn't find locality"
-                        self.country = firstPlacemark.country ?? "Could not find country"
-                        self.latitudeCoordinates = "\(firstLocation.coordinate.latitude)" 
-                        self.longtitudeCoordinates = "\(firstLocation.coordinate.longitude)" ?? "Unable to find longtitude coordinates"
-                        
+                        self.lastKnownLocation = firstPlacemark.getLocationBreakdown()
                     }
                 }
             })
@@ -49,6 +42,6 @@ class LocationHandler : NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        city = "Error finding location"
+        lastKnownLocation = "Error finding location"
     }
 }

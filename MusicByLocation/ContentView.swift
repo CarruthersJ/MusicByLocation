@@ -12,10 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center) {
             Form {
-                Text("City: \(locationHandler.city)")
-                Text("Country: \(locationHandler.country)")
-                Text("Latitude: \(locationHandler.latitudeCoordinates)")
-                Text("Longtitude: \(locationHandler.longtitudeCoordinates)")
+                Text(locationHandler.lastKnownLocation)
             }
             
             Spacer()
