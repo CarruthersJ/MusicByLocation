@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var locationHandler = LocationHandler()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(alignment: .center) {
+            Form {
+                Text("City: \(locationHandler.city)")
+                Text("Country: \(locationHandler.country)")
+                Text("Latitude: \(locationHandler.latitudeCoordinates)")
+                Text("Longtitude: \(locationHandler.longtitudeCoordinates)")
+            }
+            
+            Spacer()
+            Button("Find Music", action: {
+                locationHandler.requestLocation()
+            })
         }
-        .padding()
+        .onAppear() {
+            locationHandler.requestAuthorisation()
+        }
     }
 }
 
