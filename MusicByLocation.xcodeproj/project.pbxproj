@@ -17,6 +17,8 @@
 		2C5DA98F29B11069005F9DA5 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA98E29B11069005F9DA5 /* LocationHandler.swift */; };
 		2CD16C1F29B2997E009C401F /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16C1E29B2997E009C401F /* CLPlacemark.swift */; };
 		2CD16C2129B29F0D009C401F /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16C2029B29F0D009C401F /* StateController.swift */; };
+		2CD16C2429B2A5E2009C401F /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16C2329B2A5E2009C401F /* ArtistResponse.swift */; };
+		2CD16C2729B2A619009C401F /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD16C2629B2A619009C401F /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		2C5DA98E29B11069005F9DA5 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		2CD16C1E29B2997E009C401F /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
 		2CD16C2029B29F0D009C401F /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		2CD16C2329B2A5E2009C401F /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
+		2CD16C2629B2A619009C401F /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +84,6 @@
 		2C5DA95829B10F37005F9DA5 = {
 			isa = PBXGroup;
 			children = (
-				2CD16C2029B29F0D009C401F /* StateController.swift */,
-				2CD16C1D29B2996B009C401F /* Extensions */,
 				2C5DA96329B10F37005F9DA5 /* MusicByLocation */,
 				2C5DA97429B10F3C005F9DA5 /* MusicByLocationTests */,
 				2C5DA97E29B10F3C005F9DA5 /* MusicByLocationUITests */,
@@ -102,11 +104,14 @@
 		2C5DA96329B10F37005F9DA5 /* MusicByLocation */ = {
 			isa = PBXGroup;
 			children = (
+				2CD16C1D29B2996B009C401F /* Extensions */,
+				2CD16C2229B2A596009C401F /* Model */,
 				2C5DA96429B10F37005F9DA5 /* MusicByLocationApp.swift */,
 				2C5DA96629B10F37005F9DA5 /* ContentView.swift */,
+				2CD16C2029B29F0D009C401F /* StateController.swift */,
+				2C5DA98E29B11069005F9DA5 /* LocationHandler.swift */,
 				2C5DA96829B10F3C005F9DA5 /* Assets.xcassets */,
 				2C5DA96A29B10F3C005F9DA5 /* Preview Content */,
-				2C5DA98E29B11069005F9DA5 /* LocationHandler.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -142,6 +147,15 @@
 				2CD16C1E29B2997E009C401F /* CLPlacemark.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CD16C2229B2A596009C401F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CD16C2329B2A5E2009C401F /* ArtistResponse.swift */,
+				2CD16C2629B2A619009C401F /* Artist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +293,8 @@
 				2C5DA98F29B11069005F9DA5 /* LocationHandler.swift in Sources */,
 				2CD16C1F29B2997E009C401F /* CLPlacemark.swift in Sources */,
 				2CD16C2129B29F0D009C401F /* StateController.swift in Sources */,
+				2CD16C2429B2A5E2009C401F /* ArtistResponse.swift in Sources */,
+				2CD16C2729B2A619009C401F /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
