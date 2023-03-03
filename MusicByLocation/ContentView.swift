@@ -22,6 +22,7 @@ struct ContentView: View {
         }
         .onAppear() {
             state.requestAccessToLocationData()
+            state.getArtists()
         }
     }
 }
