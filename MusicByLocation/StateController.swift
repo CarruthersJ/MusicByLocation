@@ -8,8 +8,12 @@
 import Foundation
 
 class StateController: ObservableObject {
-    @Published var lastKnownLocation : String = ""
-    @Published var artistNames: String = ""
+    var lastKnownLocation : String = "" {
+        didSet {
+            getArtists(search: lastKnownLocation)
+        }
+    }
+    @Published var artistsByLocation: String = ""
     let locationHandler = LocationHandler()
     
     func findMusic() {
@@ -21,8 +25,11 @@ class StateController: ObservableObject {
         locationHandler.requestAuthorisation()
     }
     
-    func getArtists() {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=Lionel%20Richie&entity=musicArtist")
+    func getArtists(search: String) {
+        let startOfUrl = "https://itunes.apple.com/search?term="
+        let endOfUrl = "\(search)&entity=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: startOfUrl + endOfUrl)
         else {
             print("Invalid URL")
             return
@@ -38,7 +45,7 @@ class StateController: ObservableObject {
                     }
                     
                     DispatchQueue.main.async {
-                        self.artistNames = names.joined(separator: ", ")
+                        self.artistsByLocation = names.joined(separator: ", ")
                     }
                 }
             }

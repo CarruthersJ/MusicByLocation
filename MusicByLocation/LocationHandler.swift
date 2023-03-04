@@ -34,7 +34,7 @@ class LocationHandler : NSObject, CLLocationManagerDelegate {
                     self.stateController?.lastKnownLocation = "Could not perform look up of location from coordinate information"
                 } else  {
                     if let firstPlacemark = placemarks?[0] {
-                        self.stateController?.lastKnownLocation = firstPlacemark.getLocationBreakdown()
+                        self.stateController?.lastKnownLocation = firstPlacemark.country ?? ""
                     }
                 }
             })
