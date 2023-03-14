@@ -11,8 +11,11 @@ struct ContentView: View {
     @StateObject private var state = StateController()
     
     var body: some View {
+        let list = state.artistsByLocation.split(separator: ", ")
         VStack(alignment: .center) {
-            Text(state.artistsByLocation)
+            List(Array(list), id: \.self) { artist in
+                Text("\(String(artist))")
+            }
                 .padding()
             Spacer()
             Button("Find Music", action: {
