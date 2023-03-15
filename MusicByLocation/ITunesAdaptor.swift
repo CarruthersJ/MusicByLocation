@@ -8,11 +8,11 @@
 import Foundation
 
 class ITunesAdaptor {
-    let startOfUrl = "https://itunes.apple.com="
+    let startOfUrl = "https://itunes.apple.com"
     
     func getArtists(search: String, completion: @escaping ([Artist]?) -> Void ) {
         
-        let endOfUrl = "/search?term\(search)&entity=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let endOfUrl = "/search?term=\(search)&entity=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: startOfUrl + endOfUrl)
         else {

@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var state = StateController()
+    var listOfArtists: [String] = []
     
     var body: some View {
         let list = state.artistsByLocation.split(separator: ", ")
+        listOfArtists.addStringsFromArrayOfSubstrings(substringArray: list)
+        
         VStack(alignment: .center) {
-            List(Array(list), id: \.self) { artist in
+            List(listOfArtists, id: \.self) { artist in
                 Text("\(String(artist))")
             }
-                .padding()
             Spacer()
             Button("Find Music", action: {
                 state.findMusic()

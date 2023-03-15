@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C15195829B634B200B136EA /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15195729B634B200B136EA /* ITunesAdaptor.swift */; };
+		2C22BD8A29C2708F00C69682 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C22BD8929C2708F00C69682 /* Array.swift */; };
 		2C5DA96529B10F37005F9DA5 /* MusicByLocationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA96429B10F37005F9DA5 /* MusicByLocationApp.swift */; };
 		2C5DA96729B10F37005F9DA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA96629B10F37005F9DA5 /* ContentView.swift */; };
 		2C5DA96929B10F3C005F9DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5DA96829B10F3C005F9DA5 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		2C15195729B634B200B136EA /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
+		2C22BD8929C2708F00C69682 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2C5DA96129B10F37005F9DA5 /* MusicByLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicByLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5DA96429B10F37005F9DA5 /* MusicByLocationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationApp.swift; sourceTree = "<group>"; };
 		2C5DA96629B10F37005F9DA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD16C1E29B2997E009C401F /* CLPlacemark.swift */,
+				2C22BD8929C2708F00C69682 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C22BD8A29C2708F00C69682 /* Array.swift in Sources */,
 				2C5DA96729B10F37005F9DA5 /* ContentView.swift in Sources */,
 				2C15195829B634B200B136EA /* ITunesAdaptor.swift in Sources */,
 				2C5DA96529B10F37005F9DA5 /* MusicByLocationApp.swift in Sources */,
